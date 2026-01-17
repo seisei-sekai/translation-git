@@ -1,0 +1,118 @@
+.App {
+  background-color: #ffffff;  /* Light grey background */
+  color: #333;                /* Dark grey text for better readability */
+  font-family: 'Arial', sans-serif;  /* Using a simple and modern font */
+}
+
+.App-header {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: #007BFF;  /* Flat blue color for links */
+}
+
+buttonn {
+  background-color: #007BFF;  /* Consistent flat blue color for buttons */
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;  /* Slightly rounded corners for buttons */
+  cursor: pointer;
+  font-size: 16px;
+}
+
+buttonn:active {
+  background-color: #0056b3;  /* Darker blue when the button is pressed */
+}
+/* index.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: rgb(255, 255, 255);  /* Ensure the entire page background is white */
+  font-family: 'Arial', sans-serif;
+
+  touch-action: pan-x pan-y;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.floating-info-container {
+  position: fixed; /* Fixed position to keep it in place while scrolling */
+  top: 10px; /* Distance from the top of the viewport */
+  left: 10px; /* Distance from the right of the viewport */
+  z-index: 10000; /* High z-index to ensure it stays on top */
+  padding: 4px 4px; /* Padding inside the button */
+  background-color: #00000050; /* Blue background color */
+  color: white; /* White text color */
+  border: none; /* No border */
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  outline: none; /* Remove outline */
+  font-size: 8px; /* Text size */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for 3D effect */
+  text-align: center; /* Center the text inside the container */
+  max-width: 150px;
+}
+
+.floating-info-container h3 {
+  margin: 5px 0;  /* Spacing between each h3 */
+}
+
+@media (max-width: 768px) {
+  /* Ensure the container adapts to smaller screens */
+  .floating-info-container {
+    font-size: 8px;
+    padding: 4px;
+    max-width: 150px;
+    top: 10px; /* Distance from the top of the viewport */
+    left: 10px; /* Distance from the right of the viewport */
+  }
+}
+.language-selector {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+}
+
+.language-selector select {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  background-color: #00000050;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 30px;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 8px top 50%;
+  background-size: 16px;
+}
+
+.language-selector select:hover {
+  background-color: #434141;
+}
+
+.language-selector select option {
+  background-color: #333;
+  color: white;
+}
+

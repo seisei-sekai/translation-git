@@ -1,0 +1,536 @@
+.map-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: pan-x pan-y;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+}
+
+.search-container {
+  padding: 20px;
+}
+
+.search-input {
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+
+
+/* Add these new styles while keeping your existing ones */
+
+.map-status-bar {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  background-color: #f9b74ce8;
+  z-index: 2000;
+  transition: height 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
+  min-height: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+.map-header-setting {
+    
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+
+}
+
+.map-title {
+    position:relative;
+    top:20px;
+  font-size: 18px;
+  left:0px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.map-action-button {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff2f;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.map-action-button:hover {
+  background-color: rgba(198, 198, 198, 0.83);
+}
+
+.map-icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+.map-toggle-button-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background-color: rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-toggle-button {
+  width: 40px;
+  height: 15px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-toggle-icon {
+  width: 20px;
+  height: 2px;
+  background-color: transparent;
+  position: relative;
+}
+
+.map-toggle-icon::before,
+.map-toggle-icon::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  background-color: #666;
+  transition: transform 0.3s ease;
+}
+
+.map-toggle-icon::before {
+  top: -4px;
+  left: 0;
+  transform: rotate(-45deg);
+}
+
+.map-toggle-icon::after {
+  top: -4px;
+  right: 0;
+  transform: rotate(45deg);
+}
+
+.map-status-bar-content.minimized .map-toggle-icon::before {
+  transform: rotate(45deg);
+}
+
+.map-status-bar-content.minimized .map-toggle-icon::after {
+  transform: rotate(-45deg);
+}
+
+.floating-locate-button {
+  position: fixed;
+  bottom: 150px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.floating-locate-button .map-action-button {
+  background: #ffffffee;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.floating-locate-button .map-action-button:hover {
+  background: #38414e;
+}
+
+
+
+.map-interaction-container {
+    position: fixed;
+    bottom: 30px;
+    left:10px;
+    right:10px;
+  
+    height: 70px; /* 1/3 of viewport height */
+    background-color: #f9b74cf6;
+    border-radius:20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+
+  box-sizing: border-box;
+}
+
+.search-box-container {
+  width: 100%;
+  padding: 5px 15px ;
+  border-radius: 10px;
+  margin-bottom: 15px;
+ background-color: #00000015;
+  color: #ffffff;
+}
+
+.search-box-container input {
+  background-color: #d9d9d9;
+  color: #ffffff;
+  border: 1px solid #4a4a4a;
+  font-size: 16px !important;
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 8px;
+  
+  /* Prevent zoom */
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: 100%;
+  
+  /* Prevent selection */
+  user-select: none;
+  -webkit-user-select: none;
+  
+  /* Additional zoom prevention */
+  max-height: 100%;
+  transform-origin: top left;
+  transform: scale(1);
+}
+
+.search-box-container input::placeholder {
+  color: #999999;
+  font-size: 16px;
+}
+
+.fixed-button-container.left {
+  position: absolute;
+  left: 10px;
+}
+
+.fixed-button-container.right {
+  position: absolute;
+  right: 10px;
+}
+
+.map-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 1px solid red;
+  border-radius: 4px;
+  color: red;
+}
+
+/* Add these styles to force the dropdown to appear above the input */
+.pac-container {
+  margin-top: -300px !important; /* Adjust this value as needed */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ddd;
+}
+
+/* Optional: Style the dropdown items */
+.pac-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.pac-item:hover {
+  background-color: #f5f5f5;
+}
+
+
+
+.info-window-content {
+  color: #000000;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 150px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  /* Add these properties for scrolling */
+  max-height: 250px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  
+  /* Optional: Style the scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+/* Optional: Style the scrollbar for WebKit browsers */
+.info-window-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.info-window-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.info-window-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.info-window-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Add styles for Google Maps info window */
+
+/* Add these styles for the InfoWindow content */
+#content {
+  font-family: Arial, sans-serif;
+  padding: 10px;
+}
+
+.floating-nearby-button {
+  position: fixed;
+  bottom: 150px;
+  right: 60px;
+  z-index: 1000;
+}
+
+.floating-nearby-button .map-action-button {
+  background: #8a8a8aee;
+  border: none;
+  border-radius: 18px;
+  padding: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.floating-nearby-button .map-action-button:hover {
+  background: #a67e7eee;
+}
+
+.ai-rating-button {
+  background: #4285f4;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.ai-rating-button:hover {
+  background: #357abd;
+}
+
+.ai-rating-result {
+  margin-top: 8px;
+  padding: 8px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  max-height: 100px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optional: Style the scrollbar */
+.ai-rating-result::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ai-rating-result::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.ai-rating-result::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.ai-rating-result::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Add these styles to your Map.css file */
+.fixed-info-window {
+  position: fixed;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 15px;
+  border-radius: 18px;
+  z-index: 1000;
+  width: 95%;
+
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.fixed-info-window-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 18px;
+}
+
+.floating-filter {
+  position: fixed;
+  top: 80px;
+  right: 10px;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.906);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+}
+
+.filter-dropdown {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.891);
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  min-width: 120px;
+}
+
+.filter-dropdown:hover {
+  background-color: #f5f5f5;
+}
+
+.filter-dropdown option {
+  padding: 8px;
+}
+
+.floating-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rating-filter {
+  margin-top: 4px;
+}
+
+.filter-dropdown {
+  min-width: 150px; /* Make dropdowns wider to accommodate longer text */
+}
+
+.filter-label {
+  color: rgb(0, 0, 0);
+  margin-right: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.info-window-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.info-window-button {
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.info-window-button:hover {
+  background-color: #e0e0e0;
+}
+
+.add-location-button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-location-button:hover {
+  background-color: #e0e0e0;
+}
+
+.floating-add-location {
+  position: fixed;
+  top: 250px; /* Positioned below the filter container */
+  right: 10px;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.906);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  width: 150px; /* Match the width of filter dropdowns */
+}
+
+.add-location-button {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-location-button:hover {
+  background-color: #e0e0e0;
+}
+
+.contributor-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+  padding: 0 2px;
+}
+
+.floating-add-location {
+  position: fixed;
+  top: 250px;
+  right: 10px;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.906);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 8px; /* Increased padding to accommodate the label */
+  width: 150px;
+}

@@ -1,0 +1,154 @@
+/* Container for the chatroom page */
+.chatroom-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #e0e0e0;
+    background-color: #1e1e1e;
+
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Headings */
+  .chatroom-container h1,
+  .chatroom-container h2 {
+    color: #ffffff;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  /* Link back to the main page */
+  .chatroom-container a {
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #64b5f6;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .chatroom-container a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Input fields */
+  .chatroom-container input[type="text"],
+  .chatroom-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #333;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border 0.3s ease;
+    color: #e0e0e0;
+  }
+  
+  .chatroom-container input[type="text"]:focus,
+  .chatroom-container input[type="password"]:focus {
+    outline: none;
+    border-color: #64b5f6;
+  }
+  
+  /* Buttons */
+  .chatroom-container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2196f3;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .chatroom-container button:hover {
+    background-color: #1976d2;
+  }
+  
+  /* Chatroom list */
+  .chatroom-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .chatroom-container li {
+    margin: 10px 0;
+  }
+  
+  .chatroom-container li button {
+    background-color: #f44336;
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  .chatroom-container li button:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Error and Success messages */
+  .chatroom-container p {
+    text-align: center;
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  .chatroom-container p.error-message {
+    color: #ff5252;
+  }
+  
+  .chatroom-container p.success-message {
+    color: #69f0ae;
+  }
+  
+  /* Media Queries for responsiveness */
+  @media (max-width: 768px) {
+    .chatroom-container {
+      padding: 15px;
+    }
+  
+    .chatroom-container input[type="text"],
+    .chatroom-container input[type="password"],
+    .chatroom-container button {
+      font-size: 16px;
+    }
+  }
+  
+
+  .empty-space {
+    height: 70px;
+    width: 100%;
+  }
+
+.public-chatroom-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.join-public-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.join-public-btn:hover {
+  background-color: #43a047;
+}

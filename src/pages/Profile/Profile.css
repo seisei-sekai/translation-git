@@ -1,0 +1,584 @@
+:root {
+  --button-bg-color: #6a6969;
+  --button-hover-color: #333333;
+  --button-border-radius: 12px;
+  --button-cancel-color: #444444;
+  --button-cancel-hover-color: #666666;
+}
+
+/* Profile page container */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;  /* Slightly wider to accommodate new content */
+    background-color: #1e1e1e;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
+
+    text-align: center;
+    margin: auto;  /* Centers the profile container */
+    color: #e0e0e0;
+}
+
+/* Profile header */
+.profile-container h1 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.profile-container h2 {
+    font-size: 1.25rem;
+    color: #cccccc;
+    margin-top: 10px;
+}
+
+/* src/pages/Profile/Profile.css */
+.profile-public-avatar {
+  width: 150px;  /* Set width */
+  height: 150px; /* Set height to maintain square ratio */
+  object-fit: cover; /* Ensure the image doesn't stretch and maintains aspect ratio */
+  border-radius: 50%; /* Make it a circle */
+  margin-top: 20px;
+}
+
+/* Avatar styling */
+.profile-avatar-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.profile-avatar-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #444;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Form for uploading avatar */
+.profile-avatar-upload-form {
+    margin-top: 20px;
+}
+
+.profile-avatar-upload-form input[type="file"],
+.profile-username-edit input[type="text"] {
+    font-size: 16px; /* Ensure font size is at least 16px to prevent zoom */
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+}
+
+.profile-avatar-upload-form input[type="file"] {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+}
+
+.profile-avatar-upload-form button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-avatar-upload-form button:hover {
+    background-color: #45a049;
+}
+
+/* Success message styling */
+.profile-upload-success {
+    color: #4caf50;
+    margin-top: 10px;
+}
+
+/* Not logged in styling */
+.profile-not-logged-in {
+    margin-top: 20px;
+}
+
+.profile-not-logged-in h2 {
+    color: #cccccc;
+}
+
+/* User Details Styling */
+.profile-user-details {
+    margin-top: 30px;
+    text-align: left;  /* Align details to the left for better readability */
+    width: 100%;
+    max-width: 400px;
+}
+
+.profile-user-details h3 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.profile-user-details p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #cccccc;
+}
+
+.profile-user-details strong {
+    color: #ffffff;
+}
+
+/* Username Edit Section */
+.profile-username-edit {
+    margin-top: 20px;
+}
+
+.profile-username-edit input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    width: 70%;
+    margin-right: 10px;
+}
+
+.profile-username-edit button {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.profile-username-edit button:hover {
+    background-color: #0056b3;
+}
+
+.profile-username-edit-cancel {
+    background-color: #555;
+}
+
+.profile-username-edit-cancel:hover {
+    background-color: #777;
+}
+
+/* Success message for username update */
+.profile-username-success {
+    color: #4caf50;
+    margin-top: 10px;
+}
+
+/* Error message styling */
+.profile-error-message {
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+/* Link to go back */
+.profile-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #3498db;
+    font-size: 1rem;
+}
+
+.profile-link:hover {
+    color: #2980b9;
+}
+
+.profile-password-edit {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.password-input-group {
+  margin: 10px 0;
+}
+
+.password-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.password-input-wrapper input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.toggle-password {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.password-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.error-message {
+  color: red;
+  margin: 10px 0;
+}
+
+.profile-password-success {
+  color: green;
+  margin: 10px 0;
+}
+
+/* Common styles for edit sections */
+.profile-username-edit,
+.profile-password-edit {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #444;  /* Darker border to match theme */
+  border-radius: 8px;
+  background-color: #2a2a2a;  /* Slightly lighter than main background */
+  width: 100%;
+}
+
+/* Common heading styles */
+.profile-username-edit h3,
+.profile-password-edit h3 {
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+/* Common input styles */
+.profile-username-edit input[type="text"],
+.password-input-wrapper input {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 5px;
+  color: #e0e0e0;
+  font-size: 16px;
+}
+
+/* Common button styles */
+.profile-username-edit button,
+.profile-password-edit button:not(.toggle-password),
+.profile-avatar-upload-form button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  margin: 3px;
+}
+
+/* Primary button style */
+.profile-username-edit button:not(.profile-username-edit-cancel),
+.profile-password-edit button:not(.profile-password-edit-cancel):not(.toggle-password),
+.profile-avatar-upload-form button {
+  background-color: var(--button-bg-color);
+  color: white;
+}
+
+.profile-username-edit button:not(.profile-username-edit-cancel):hover,
+.profile-password-edit button:not(.profile-password-edit-cancel):not(.toggle-password):hover,
+.profile-avatar-upload-form button:hover {
+  background-color: var(--button-hover-color);
+}
+
+/* Cancel button style */
+.profile-username-edit-cancel,
+.profile-password-edit-cancel {
+  background-color: var(--button-cancel-color) !important;
+  color: white !important;
+}
+
+.profile-username-edit-cancel:hover,
+.profile-password-edit-cancel:hover {
+  background-color: var(--button-cancel-hover-color) !important;
+}
+
+/* Success message styling */
+.profile-username-success,
+.profile-password-success {
+  color: #4caf50;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Password specific styles */
+.password-input-group {
+  margin: 15px 0;
+}
+
+.password-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.toggle-password {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+.password-buttons {
+  margin-top: 15px;  /* Slightly reduced margin */
+  display: flex;
+  justify-content: center;
+  gap: 8px;  /* Reduced gap */
+}
+
+/* Error message styling */
+.error-message {
+  color: #ff6b6b;
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
+/* Avatar edit section */
+.profile-avatar-edit {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  width: 100%;
+}
+
+.profile-avatar-edit h3 {
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.profile-avatar-upload-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.file-input-wrapper {
+  width: 100%;
+}
+
+.file-input-wrapper input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 5px;
+  color: #e0e0e0;
+  cursor: pointer;
+}
+
+.file-input-wrapper input[type="file"]::-webkit-file-upload-button {
+  background-color: var(--button-bg-color);
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+  font-size: 0.9rem;
+}
+
+.file-input-wrapper input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.avatar-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+/* Ensure avatar upload form buttons match other buttons */
+.profile-avatar-upload-form button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  background-color: var(--button-bg-color);
+  color: white;
+}
+
+.profile-avatar-upload-form button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.profile-upload-success {
+  color: #4caf50;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Description edit section */
+.profile-description-edit {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  width: 100%;
+}
+
+.profile-description-edit h3 {
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.profile-description-edit textarea {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 5px;
+  color: #e0e0e0;
+  font-size: 16px;
+  resize: vertical;
+  min-height: 100px;
+  margin-bottom: 10px;
+}
+
+.description-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.profile-description-success {
+  color: #4caf50;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.user-description {
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Public profile description */
+.profile-description {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.profile-description h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.profile-description p {
+  color: #e0e0e0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Description edit section buttons */
+.profile-description-edit button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  margin: 3px;
+  background-color: var(--button-bg-color);
+  color: white;
+}
+
+.profile-description-edit button:hover {
+  background-color: var(--button-hover-color);
+}
+
+.profile-description-edit-cancel {
+  background-color: var(--button-cancel-color) !important;
+  color: white !important;
+}
+
+.profile-description-edit-cancel:hover {
+  background-color: var(--button-cancel-hover-color) !important;
+}
+
+.profile-subscription-status {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  width: 100%;
+}
+
+.profile-subscription-status h3 {
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.profile-subscription-status p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #cccccc;
+}
+
+.profile-subscription-status strong {
+  color: #ffffff;
+}
+
+.cancel-subscription-button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  background-color: var(--button-cancel-color);
+  color: white;
+}
+
+.cancel-subscription-button:hover {
+  background-color: var(--button-cancel-hover-color);
+}
+
+.success-message {
+  color: #4caf50;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}

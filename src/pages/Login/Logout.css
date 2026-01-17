@@ -1,0 +1,41 @@
+.logout-btn {
+    position: fixed; /* Fixed position to keep it in place while scrolling */
+    top: 50px; /* Distance from the top of the viewport */
+    right: 10px; /* Distance from the right of the viewport */
+    z-index: 10000; /* High z-index to ensure it stays on top */
+    padding: 8px 15px; /* Padding inside the button */
+    background-color: #00000050; /* Semi-transparent black background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    outline: none; /* Remove outline */
+    font-size: 16px; /* Text size */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for 3D effect */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .logout-btn:hover {
+    background-color: #434141; /* Darker shade on hover for visual feedback */
+  }
+  
+  .logout-btn-clear-storage {
+    position: fixed; /* Fixed position to keep it in place while scrolling */
+    top: 10px; /* Distance from the top of the viewport */
+    right: 10px; /* Distance from the right of the viewport */
+    z-index: 10000; /* High z-index to ensure it stays on top */
+    padding: 8px 15px; /* Padding inside the button */
+    background-color: #00000050; /* Semi-transparent black background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    outline: none; /* Remove outline */
+    font-size: 16px; /* Text size */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for 3D effect */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .logout-btn-clear-storage:hover {
+    background-color: #434141; /* Darker shade on hover for visual feedback */
+  }

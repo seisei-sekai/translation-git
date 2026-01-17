@@ -1,0 +1,46 @@
+.qr-container {
+  margin-top: 10px; 
+  position: fixed;       /* Fixed positioning to keep it in view */
+  top: 7%;              /* Adjust to avoid hiding behind any top bars */
+  left: 20%;             /* Center align horizontally */
+  transform: translateX(-50%); /* Adjust to exactly center */
+  z-index: 9998;         /* High z-index to keep it above other content */
+  margin-bottom: 10px;   /* Space below the QR code */
+  
+}
+
+.text-container {
+  position: fixed;   
+  top: 10%;
+  transform: translate(-50%, -50%);
+  z-index: 9998;      
+  text-align: center;  /* Center-aligns all text within the container */
+  margin-top: 160px;    /* Space below the QR code container */
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  white-space: nowrap;  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 5vw; 
+}
+
+.background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: calc(85%);  /* Calculate the bottom based on QR code's position plus extra 20px */
+  background-color: rgba(243, 162, 32, 0.793); /* Translucent black background */
+  z-index: 9997; /* Lower z-index than the QR code, but still high */
+  transition: transform 0.6s ease-out;  /* Smooth transition for scaling */
+  transform-origin: top;  
+}
+
+.centered-content {
+  position: fixed;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.6s ease-out;  /* Smooth transition for scaling */
+  z-index: 9997;
+}

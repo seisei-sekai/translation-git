@@ -1,0 +1,80 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+# /build
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database files
+database/map/tokyo_osm_data.json
+
+# Sensitive files
+README
+setup_gcp_mysql.sh
+final_deploy.sh
+*.pem
+*.key
+*.crt
+
+# Legacy files with sensitive information
+server/legacy/
+server/app_legacy.py
+server/get_ai_international_rating.py
+server/streaming.py
+nginx
+example/
+update_i18n_script.py
+src/pages/Chat/Language/
+
+# Instance folder
+instance/
+
+# Uploads folder with user content
+uploads/chatroom_audio/*
+uploads/chatroom_photo/*
+uploads/clonedTranslatedVoice/*
+uploads/voice_clone_reference/*
+!uploads/avatars/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Certificates
+certificate/
+*.pem
+
+# Build artifacts
+build/
+dist/
+
+# Logs
+*.log
+

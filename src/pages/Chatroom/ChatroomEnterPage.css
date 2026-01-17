@@ -1,0 +1,83 @@
+/* Scoped to chatroom-enter-container - don't affect other pages */
+.chatroom-enter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  padding: 20px;
+  background-color: #252525; /* Dark background */
+  font-family: 'Arial', sans-serif;
+}
+
+.chatroom-enter-content {
+  width: 100%;
+  max-width: 400px;
+  background-color: #393939; /* Dark content background */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(73, 73, 73, 0.2);
+  padding: 40px;
+  text-align: center;
+}
+
+.chatroom-enter-title {
+  font-size: 28px;
+  color: #ffffff; /* White text */
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.chatroom-enter-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.chatroom-enter-input {
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  background-color: #2a2a2a; /* Dark input background */
+  color: #ffffff; /* White text */
+}
+
+.chatroom-enter-input:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.chatroom-enter-button {
+  padding: 14px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.chatroom-enter-button:hover {
+  background-color: #45a049;
+}
+
+.chatroom-enter-button:active {
+  transform: scale(0.98);
+}
+
+.chatroom-enter-error {
+  color: #ff6b6b; /* Lighter red for better visibility on dark background */
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.chatroom-enter-icon {
+  width: 64px; /* Adjust the size as needed */
+  height: 64px;
+  margin-bottom: 20px; /* Add some space between the icon and the title */
+}

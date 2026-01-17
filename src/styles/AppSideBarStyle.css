@@ -1,0 +1,184 @@
+/* Add to your existing CSS file */
+@import url('../pages/Chat/Chat.css');
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(26, 22, 22, 0.924);
+    overflow-x: hidden;
+    transition: width 0.8s ease-in-out;
+    z-index: 10000; /* Ensure it's above other content */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Center the content horizontally */
+  }
+  
+  .sidebar.open {
+    width: 38.2%; /* Adjust width when open */
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0 0 20px;
+    display: flex; /* Enable flexbox on ul */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center the items vertically */
+    align-items: flex-start; /* Align items to the start (left) horizontally */
+    width: 100%;
+    flex-grow: 1;
+  }
+  
+  .sidebar ul li {
+    padding: 20px 10px; 
+    border-bottom: 1px solid #ffffff;
+    cursor: pointer;
+    color:#ffffff;
+    width: 100%;
+    text-align: left; /* Make sure text is left-aligned */
+    font-size: 20px; /* Text size */
+    transition: all 0.3s ease, padding-left 0.12s ease, transform 0.12s ease; /* Ensures the return to initial state in 0.2s */
+    }
+  
+  .sidebar ul li:hover,
+  .sidebar ul li:active {
+      background-color: #727272;
+      padding-left: 30px; /* Slight padding change on hover for animation */
+      transform: translateX(10px); /* Move slightly to the right when clicked or touched */
+      transition: all 0.12s ease; /* Smooth transition back to initial state */
+  }
+  
+  .sidebar ul li:hover {
+      background-color: #545454;
+  }
+  /* Add to your existing CSS file */
+.body-container {
+    width: 150vw; /* More than 100% of the viewport width */
+    position: relative;
+  }
+  
+  .overflow-container {
+    width: 100vw;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Keep all items in a single line */
+  }
+  
+  .button-top-right {
+    position: fixed; /* Fixed position to keep it in place while scrolling */
+    top: 10px; /* Distance from the top of the viewport */
+    right: 10px; /* Distance from the right of the viewport */
+    z-index: 10000; /* High z-index to ensure it stays on top */
+    padding: 8px 15px; /* Padding inside the button */
+    background-color: #00000050; /* Blue background color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    outline: none; /* Remove outline */
+    font-size: 16px; /* Text size */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for 3D effect */
+  }
+  
+  .button-top-right:hover {
+    background-color: #434141; /* Darker blue on hover for visual feedback */
+  }
+
+.button-top-left-menu {
+  position: fixed;
+  top: 12.5px;
+  left: 10px;
+  z-index: 10010;
+  width: 30px;
+  height: 24px;  /* Increased height to accommodate more separation */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+}
+
+.button-top-left-menu::before,
+.button-top-left-menu::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  height: 4.5px;
+  background-color: var(--text-black-color);
+  transition: background-color 0.12s ease;
+}
+
+.button-top-left-menu::before {
+  top: 4px;  /* Moved up */
+  width: 30px;
+}
+
+.button-top-left-menu::after {
+  bottom: 4px;  /* Moved down */
+  width: 25px;
+}
+
+.button-top-left-menu.active::before,
+.button-top-left-menu.active::after {
+  background-color: white;
+}
+
+.sidebar-language-selector {
+  padding: 20px;
+  text-align: center;
+  color: #ffffffa8;
+}
+
+.sidebar-language-selector p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.sidebar-language-selector select {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ffffffa0;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 30px;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 8px top 50%;
+  background-size: 16px;
+}
+
+.sidebar-language-selector select:hover {
+  background-color: #f0f0f0;
+}
+
+.sidebar-language-selector select option {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  /* padding: 20px; */
+  margin-left: 0;
+  transition: margin-left 0.8s ease-in-out;
+} 
+
+.sidebar.open + .main-content {
+  margin-left: 38.2%; /* Match the sidebar width when open */
+}

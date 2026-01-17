@@ -1,0 +1,675 @@
+/* Base styles - scoped to dashboard only, don't affect other pages */
+.dashboard-admin-dashboard {
+  padding: 10px;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+  background: #1a1a1a;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.dashboard-header {
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.dashboard-header h1 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.dashboard-layout-dashboard {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 10px;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - 80px);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dashboard-primary-dashboard,
+.dashboard-secondary-dashboard {
+  overflow-y: auto;
+  padding-right: 10px;
+  /* Styled scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #404040 #1a1a1a;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Scrollbar styles for webkit browsers (Chrome, Safari, newer Edge) */
+.dashboard-primary-dashboard::-webkit-scrollbar,
+.dashboard-secondary-dashboard::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+.dashboard-primary-dashboard::-webkit-scrollbar-track,
+.dashboard-secondary-dashboard::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dashboard-primary-dashboard::-webkit-scrollbar-thumb,
+.dashboard-secondary-dashboard::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.dashboard-primary-dashboard::-webkit-scrollbar-thumb:hover,
+.dashboard-secondary-dashboard::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Scrollbar styles for Firefox */
+.dashboard-primary-dashboard,
+.dashboard-secondary-dashboard {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* Hide scrollbar when not scrolling (optional) */
+.dashboard-primary-dashboard,
+.dashboard-secondary-dashboard {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.dashboard-section-dashboard {
+  background: #2d2d2d;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  width: 100%;
+}
+
+.section-header-dashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+  width: 100%;
+}
+
+.refresh-button-dashboard {
+  padding: 8px 16px;
+  background: #00ff87;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+  margin: 0 auto;
+}
+
+.refresh-button-dashboard:hover {
+  background: #00cc6a;
+}
+
+.refresh-button-dashboard:disabled {
+  background: #404040;
+  cursor: not-allowed;
+}
+
+.metrics-latest-dashboard {
+  margin-bottom: 2rem;
+}
+
+.metrics-grid-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.3rem;
+  margin: 0.3rem 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.metric-card-dashboard {
+  background: #2d3436;
+  border-radius: 4px;
+  padding: 0.4rem;
+}
+
+.metric-card-dashboard.clickable-dashboard {
+  cursor: pointer;
+}
+
+.metric-card-dashboard.clickable-dashboard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card-dashboard.selected-dashboard {
+  border: 2px solid #00ff87;
+}
+
+.metric-card-dashboard h4 {
+  margin: 0;
+  color: #8e9eab;
+  font-size: 0.65rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.metric-card-dashboard p {
+  margin: 0.1rem 0 0 0;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.metrics-timeseries-dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 400px; /* Increased from 300px */
+}
+
+.timeseries-controls-dashboard {
+  padding: 5px 0;
+  margin-bottom: 10px;
+}
+
+.timeseries-controls-dashboard select {
+  background: #2d3436;
+  color: #ffffff;
+  border: 1px solid #404040;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  width: 200px;
+}
+
+.chart-container-dashboard {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  height: calc(100% - 60px); /* Increased space for legend */
+  margin-top: 20px; /* Add space between controls and chart */
+}
+
+/* Ensure the Line chart respects container dimensions */
+.chart-container-dashboard canvas {
+  max-height: 100% !important;
+}
+
+/* Update chart content for time series */
+.chart-content-dashboard.time-series {
+  padding: 0.5rem;
+  height: 400px; /* Increased from 300px */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.world-map-container-dashboard {
+  height: 300px;
+  background: #2d2d2d;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100%;
+  min-height: 300px; /* Ensure minimum height */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.jvectormap-container {
+  border-radius: 4px;
+  background-color: transparent !important;
+  margin: 0 auto;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .dashboard-layout-dashboard {
+    grid-template-columns: 1fr;
+    height: auto;
+    overflow: visible;
+  }
+  
+  .dashboard-admin-dashboard {
+    height: auto;
+    overflow: visible;
+  }
+  
+  .dashboard-primary-dashboard,
+  .dashboard-secondary-dashboard {
+    overflow: visible;
+    padding-right: 0;
+    height: auto;
+  }
+  
+  .metrics-grid-dashboard {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .chart-content-dashboard {
+    height: auto;
+    min-height: 300px;
+  }
+
+  .chart-wrapper-dashboard {
+    height: auto;
+    min-height: 300px;
+  }
+
+  .world-map-container-dashboard {
+    height: 250px; /* Slightly smaller for mobile */
+    min-height: 250px;
+  }
+
+  .geographic-content-dashboard {
+    height: auto;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-admin-dashboard {
+    padding: 5px;
+  }
+
+  .chart-section-dashboard {
+    margin-bottom: 10px;
+  }
+
+  .world-map-container-dashboard {
+    height: 200px; /* Even smaller for phones */
+    min-height: 200px;
+  }
+
+  .country-distribution-dashboard {
+    padding: 0.75rem;
+  }
+
+  .country-table-dashboard {
+    font-size: 0.8rem;
+  }
+
+  .country-table-dashboard th,
+  .country-table-dashboard td {
+    padding: 0.5rem;
+  }
+
+  .metrics-timeseries-dashboard {
+    max-height: 350px; /* Adjusted for mobile */
+  }
+  
+  .timeseries-controls-dashboard select {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+.distribution-charts-dashboard {
+  margin: 2rem 0;
+}
+
+.charts-grid-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+.chart-card-dashboard {
+  background: #2d3436;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.chart-card-dashboard h4 {
+  margin: 0 0 1rem 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.chart-wrapper-dashboard {
+  height: 250px;
+}
+
+/* Make all text elements selectable */
+.dashboard-section-dashboard,
+.section-header-dashboard,
+.metric-card-dashboard,
+.chart-card-dashboard,
+.metrics-table-dashboard,
+h1, h2, h3, h4, p, span, div {
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Keep buttons non-selectable */
+button {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.geographic-content-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.country-distribution-dashboard {
+  background: #2d3436;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.country-distribution-dashboard h3 {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.country-table-dashboard {
+  margin-top: 1.5rem;
+  overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+}
+
+.country-table-dashboard table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #ffffff;
+}
+
+.country-table-dashboard th,
+.country-table-dashboard td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #404040;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.country-table-dashboard th {
+  background: #1a1a1a;
+  color: #8e9eab;
+  font-weight: bold;
+}
+
+.country-table-dashboard tr:hover {
+  background: #363636;
+}
+
+@media (max-width: 768px) {
+  .geographic-content-dashboard {
+    gap: 1rem;
+  }
+  
+  .country-table-dashboard {
+    font-size: 0.9rem;
+  }
+}
+
+/* Chart sections */
+.chart-section-dashboard {
+  background: #2d3436;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.chart-header-dashboard {
+  padding: 0.5rem;
+  background: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.chart-header-dashboard h3 {
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.chart-content-dashboard {
+  padding: 0.5rem;
+  height: 300px; /* Fixed height for charts */
+  overflow: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.chart-content-dashboard.collapsed {
+  display: none;
+}
+
+/* Ensure all containers respect width boundaries */
+.dashboard-primary-dashboard,
+.dashboard-secondary-dashboard,
+.chart-section-dashboard,
+.chart-content-dashboard,
+.metrics-grid-dashboard,
+.geographic-content-dashboard,
+.world-map-container-dashboard,
+.metrics-timeseries-dashboard,
+.chart-container-dashboard {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Ensure tables don't cause horizontal scroll */
+.metrics-table-dashboard,
+.country-table-dashboard {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+}
+
+.metrics-table-dashboard td,
+.country-table-dashboard td {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Global scrollbar styles for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Global scrollbar styles for Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* Global scrollbar styles for IE/Edge */
+* {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.priority-metrics-dashboard {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.metrics-grid-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.metric-card-dashboard {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.metric-label-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metric-abbreviation {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #00ff87;
+}
+
+.metric-full-name {
+  font-size: 0.8rem;
+  color: #8e9eab;
+}
+
+.metric-value-dashboard {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.priority-metrics-grid-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: #1a1a1a;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.metric-card-dashboard {
+  background: #2d2d2d;
+  padding: 0.75rem;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.metric-label-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.metric-abbreviation {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #00ff87;
+}
+
+.metric-full-name {
+  font-size: 0.7rem;
+  color: #8e9eab;
+}
+
+.metric-value-dashboard {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.admin-password-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+}
+
+.admin-password-form {
+  background-color: #2a2a2a;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.admin-password-form h2 {
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.admin-password-input-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.admin-password-input-container input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.admin-password-input-container button {
+  padding: 0.5rem 1rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.admin-password-input-container button:hover:not(:disabled) {
+  background-color: #357abd;
+}
+
+.admin-password-input-container button:disabled {
+  background-color: #666666;
+  cursor: not-allowed;
+}
+
+.admin-error-message {
+  color: #ff4444;
+  text-align: center;
+  margin-top: 1rem;
+}

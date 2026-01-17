@@ -1,0 +1,61 @@
+.global-state-display {
+  padding: 15px;
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  font-size: 10px;
+}
+
+.global-state-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.global-state-items {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.global-state-item {
+  font-size: 0.9em;
+  color: #fff;
+  word-break: break-all;
+}
+
+.global-state-key {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.global-state-value {
+  color: #aaa;
+}
+
+.global-state-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.refresh-button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.refresh-button:hover {
+  transform: rotate(180deg);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.refresh-button:active {
+  transform: rotate(360deg);
+}
